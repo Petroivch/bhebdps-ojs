@@ -6,7 +6,11 @@ describe("About Control Structures (about_control_structures.js)", function(){
     }
 
     // каково значение переменной isPositive?
+<<<<<<< HEAD
     expect(true).toBe(isPositive);
+=======
+    expect(FILL_ME_IN).toBe(isPositive);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("for", function() {
@@ -16,7 +20,11 @@ describe("About Control Structures (about_control_structures.js)", function(){
     }
 
     // каково значение счетчика?
+<<<<<<< HEAD
     expect(16).toBe(counter);
+=======
+    expect(FILL_ME_IN).toBe(counter);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("for in", function() {
@@ -32,15 +40,26 @@ describe("About Control Structures (about_control_structures.js)", function(){
     }
 
     // Какое значение получится в результате?
+<<<<<<< HEAD
     expect("nameage").toBe(result);
+=======
+    expect(FILL_ME_IN).toBe(result);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("ternary operator", function() {
     let fruit = true ? "apple" : "orange";
+<<<<<<< HEAD
     expect("apple").toBe(fruit, 'what is the value of fruit?');
 
     fruit = false ? "apple" : "orange";
     expect("orange").toBe(fruit, 'now what is the value of fruit?');
+=======
+    expect(FILL_ME_IN).toBe(fruit, 'what is the value of fruit?');
+
+    fruit = false ? "apple" : "orange";
+    expect(FILL_ME_IN).toBe(fruit, 'now what is the value of fruit?');
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("switch", function() {
@@ -55,7 +74,11 @@ describe("About Control Structures (about_control_structures.js)", function(){
     }
 
     // Какое значение получится в результате?
+<<<<<<< HEAD
     expect(2).toBe(result);
+=======
+    expect(FILL_ME_IN).toBe(result);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("switch default case", function() {
@@ -73,13 +96,23 @@ describe("About Control Structures (about_control_structures.js)", function(){
     }
 
     // Какое значение получится в результате?
+<<<<<<< HEAD
     expect("Merry").toBe(result);
+=======
+    expect(FILL_ME_IN).toBe(result);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("null coalescing", function() {
     let result = null || "a value";
 
     // Какое значение получится в результате?
+<<<<<<< HEAD
     expect("a value").toBe(result);
   });
 });
+=======
+    expect(FILL_ME_IN).toBe(result);
+  });
+});
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254

@@ -25,6 +25,7 @@ describe("About inheritance (about_inheritance.js)", function() {
   });
 
   it("should be able to call a method on the derived object", function() {
+<<<<<<< HEAD
     expect(this.swedishChef.cook()).toEqual("Mmmm soup!");
   });
 
@@ -39,12 +40,33 @@ describe("About inheritance (about_inheritance.js)", function() {
 
   it("should set constructor parameters on the derived object", function() {
     expect(this.swedishChef.mood).toEqual("chillin");
+=======
+    expect(this.swedishChef.cook()).toEqual(FILL_ME_IN);
+  });
+
+  it("should be able to call a method on the base object", function() {
+    expect(this.swedishChef.answerNanny()).toEqual(FILL_ME_IN);
+  });
+
+  it("should set constructor parameters on the base object", function() {
+    expect(this.swedishChef.age).toEqual(FILL_ME_IN);
+    expect(this.swedishChef.hobby).toEqual(FILL_ME_IN);
+  });
+
+  it("should set constructor parameters on the derived object", function() {
+    expect(this.swedishChef.mood).toEqual(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 });
 
 describe("About Crockford's inheritance improvement", function() {
   beforeEach(function(){
+<<<<<<< HEAD
     // Добавляем метод beget к прототипу Object
+=======
+    this.gonzo = new Gonzo(3, "daredevil performer", "eat a tire");
+    // https://learn.javascript.ru/prototypes
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
     Object.prototype.beget = function () {
       function F() {}
       F.prototype = this;
@@ -62,6 +84,7 @@ describe("About Crockford's inheritance improvement", function() {
 
     // Больше не нужно вызывать конструктор Muppet (базовый тип)
     Gonzo.prototype = Muppet.prototype.beget();
+<<<<<<< HEAD
     
     this.gonzo = new Gonzo(3, "daredevil performer", "eat a tire");
   });
@@ -83,3 +106,24 @@ describe("About Crockford's inheritance improvement", function() {
     expect(this.gonzo.trick).toEqual("eat a tire");
   });
 });
+=======
+  });
+
+  it("should be able to call a method on the derived object", function() {
+    expect(this.gonzo.doTrick()).toEqual(FILL_ME_IN);
+  });
+
+  it("should be able to call a method on the base object", function() {
+    expect(this.gonzo.answerNanny()).toEqual(FILL_ME_IN);
+  });
+
+  it("should set constructor parameters on the base object", function() {
+    expect(this.gonzo.age).toEqual(FILL_ME_IN);
+    expect(this.gonzo.hobby).toEqual(FILL_ME_IN);
+  });
+
+  it("should set constructor parameters on the derived object", function() {
+    expect(this.gonzo.trick).toEqual(FILL_ME_IN);
+  });
+});
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254

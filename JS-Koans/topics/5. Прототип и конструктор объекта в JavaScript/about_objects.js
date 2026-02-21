@@ -8,12 +8,21 @@ describe("About Objects (about_objects.js)", function () {
     });
 
     it("should confirm objects are collections of properties", function () {
+<<<<<<< HEAD
       expect(megalomaniac.mastermind).toBe("Joker");
     });
 
     it("should confirm that properties are case sensitive", function () {
       expect(megalomaniac.henchwoman).toBe("Harley");
       expect(megalomaniac.henchWoman).toBe(undefined);
+=======
+      expect(megalomaniac.mastermind).toBe(FILL_ME_IN);
+    });
+
+    it("should confirm that properties are case sensitive", function () {
+      expect(megalomaniac.henchwoman).toBe(FILL_ME_IN);
+      expect(megalomaniac.henchWoman).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
     });
   });
 
@@ -29,7 +38,11 @@ describe("About Objects (about_objects.js)", function () {
     };
 
     let battleCry = megalomaniac.battleCry(4);
+<<<<<<< HEAD
     expect("They are Pinky and the Brain Brain Brain Brain").toMatch(battleCry);
+=======
+    expect(FILL_ME_IN).toMatch(battleCry);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
@@ -44,8 +57,13 @@ describe("About Objects (about_objects.js)", function () {
       }
     };
 
+<<<<<<< HEAD
     expect(currentYear).toBe(currentYear);
     expect(megalomaniac.calculateAge()).toBe(currentYear - 1970);
+=======
+    expect(currentYear).toBe(FILL_ME_IN);
+    expect(megalomaniac.calculateAge()).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   describe("'in' keyword", function () {
@@ -61,19 +79,28 @@ describe("About Objects (about_objects.js)", function () {
     it("should have the bomb", function () {
       let hasBomb = "theBomb" in megalomaniac;
 
+<<<<<<< HEAD
       expect(hasBomb).toBe(true);
+=======
+      expect(hasBomb).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
     });
 
     it("should not have the detonator however", function () {
       let hasDetonator = "theDetonator" in megalomaniac;
 
+<<<<<<< HEAD
       expect(hasDetonator).toBe(false);
+=======
+      expect(hasDetonator).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
     });
   });
 
   it("should know that properties can be added and deleted", function () {
     let megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
+<<<<<<< HEAD
     expect("secretary" in megalomaniac).toBe(false);
 
     megalomaniac.secretary = "Agent Smith";
@@ -81,6 +108,15 @@ describe("About Objects (about_objects.js)", function () {
 
     delete megalomaniac.henchman;
     expect("henchman" in megalomaniac).toBe(false);
+=======
+    expect("secretary" in megalomaniac).toBe(FILL_ME_IN);
+
+    megalomaniac.secretary = "Agent Smith";
+    expect("secretary" in megalomaniac).toBe(FILL_ME_IN);
+
+    delete megalomaniac.henchman;
+    expect("henchman" in megalomaniac).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
 
@@ -93,14 +129,26 @@ describe("About Objects (about_objects.js)", function () {
       let colouredCircle = new Circle(5);
       colouredCircle.colour = "red";
 
+<<<<<<< HEAD
       expect(simpleCircle.colour).toBe(undefined);
       expect(colouredCircle.colour).toBe("red");
+=======
+      expect(simpleCircle.colour).toBe(FILL_ME_IN);
+      expect(colouredCircle.colour).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
 
       Circle.prototype.describe = function () {
         return "This circle has a radius of: " + this.radius;
       };
 
+<<<<<<< HEAD
       expect(simpleCircle.describe()).toBe("This circle has a radius of: 10");
       expect(colouredCircle.describe()).toBe("This circle has a radius of: 5");
   });
 });
+=======
+      expect(simpleCircle.describe()).toBe(FILL_ME_IN);
+      expect(colouredCircle.describe()).toBe(FILL_ME_IN);
+  });
+});
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254

@@ -8,8 +8,12 @@ describe("About Applying What We Have Learnt (about_applying_what_we_have_learnt
       { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+<<<<<<< HEAD
       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true },
       { name: "Margherita", ingredients: ["tomato sauce", "mozzarella", "basil"], containsNuts: false }
+=======
+      { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
     ];
   });
 
@@ -35,7 +39,11 @@ describe("About Applying What We Have Learnt (about_applying_what_we_have_learnt
       }
     }
 
+<<<<<<< HEAD
     expect(productsICanEat.length).toBe(2);
+=======
+    expect(productsICanEat.length).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (imperative)", function () {
@@ -47,7 +55,11 @@ describe("About Applying What We Have Learnt (about_applying_what_we_have_learnt
       }
     }
 
+<<<<<<< HEAD
     expect(sum).toBe(233168);
+=======
+    expect(sum).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   /*********************************************************************************/
@@ -60,6 +72,10 @@ describe("About Applying What We Have Learnt (about_applying_what_we_have_learnt
       }
     }
 
+<<<<<<< HEAD
     expect(ingredientCount['mushrooms']).toBe(2);
+=======
+    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 });

@@ -6,7 +6,11 @@ describe("About Functions (about_functions.js)", function() {
       return a + b;
     }
 
+<<<<<<< HEAD
     expect(add(1, 2)).toBe(3);
+=======
+    expect(add(1, 2)).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("should know internal variables override outer variables", function () {
@@ -21,9 +25,15 @@ describe("About Functions (about_functions.js)", function() {
       return message;
     }
 
+<<<<<<< HEAD
     expect(getMessage()).toBe("Outer");
     expect(overrideMessage()).toBe("Inner");
     expect(message).toBe("Outer");
+=======
+    expect(getMessage()).toBe(FILL_ME_IN);
+    expect(overrideMessage()).toBe(FILL_ME_IN);
+    expect(message).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("should have lexical scoping", function () {
@@ -35,7 +45,11 @@ describe("About Functions (about_functions.js)", function() {
       }
       return childfunction();
     }
+<<<<<<< HEAD
     expect(parentfunction()).toBe("local");
+=======
+    expect(parentfunction()).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("should use lexical scoping to synthesise functions", function () {
@@ -50,7 +64,11 @@ describe("About Functions (about_functions.js)", function() {
     let mysteryFunction3 = makeMysteryFunction(3);
     let mysteryFunction5 = makeMysteryFunction(5);
 
+<<<<<<< HEAD
     expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(23);
+=======
+    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
   });
 
   it("should allow extra function arguments", function () {
@@ -59,13 +77,21 @@ describe("About Functions (about_functions.js)", function() {
       return firstArg;
     }
 
+<<<<<<< HEAD
     expect(returnFirstArg("first", "second", "third")).toBe("first");
+=======
+    expect(returnFirstArg("first", "second", "third")).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
 
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
     }
 
+<<<<<<< HEAD
     expect(returnSecondArg("only give first arg")).toBe(undefined);
+=======
+    expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254
 
     function returnAllArgs() {
       let argsArray = [];
@@ -89,6 +115,7 @@ describe("About Functions (about_functions.js)", function() {
     };
 
     let praiseSinger = { givePraise: appendRules };
+<<<<<<< HEAD
     expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
@@ -96,3 +123,12 @@ describe("About Functions (about_functions.js)", function() {
 
   });
 });
+=======
+    expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
+
+    praiseSinger.givePraise = appendDoubleRules;
+    expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
+
+  });
+});
+>>>>>>> 4263e03719ab0f9be12e1de9834f77c43cd6b254

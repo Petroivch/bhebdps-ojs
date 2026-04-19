@@ -1,0 +1,36 @@
+{
+  "name": "rpg-game",
+  "version": "1.0.0",
+  "description": "Учебный проект RPG-game с настройкой Babel и ESLint",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "lint": "set ESLINT_USE_FLAT_CONFIG=true&& eslint . --config eslintrc.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Petroivch/bhebdps-ojs.git"
+  },
+  "keywords": [
+    "rpg",
+    "game",
+    "babel",
+    "eslint"
+  ],
+  "author": "p.tikhmenev",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@eslint/eslintrc": "^2.1.4",
+    "@eslint/js": "^8.57.1",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.15.0"
+  },
+  "dependencies": {
+    "core-js": "^3.42.0"
+  }
+}

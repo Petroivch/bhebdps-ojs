@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['dist/**', 'eslintrc.config.mjs'],
+    ignores: ['coverage/**', 'dist/**', 'eslintrc.config.mjs'],
   },
   js.configs.recommended,
   ...compat.extends('airbnb-base'),
@@ -18,6 +18,7 @@ export default [
       sourceType: 'module',
       globals: {
         ...globals.browser,
+        ...globals.jest,
         ...globals.node,
       },
     },

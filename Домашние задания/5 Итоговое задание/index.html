@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Боевая Система</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        h1 {
+            color: #4ec9b0;
+            border-bottom: 2px solid #4ec9b0;
+            padding-bottom: 10px;
+        }
+        .scenario {
+            margin: 30px 0;
+            padding: 15px;
+            border-left: 4px solid #007acc;
+            background-color: #252526;
+        }
+        .output {
+            background-color: #1e1e1e;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #3e3e42;
+            overflow-x: auto;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px 10px 0;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #005a9e;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚔️ RPG Боевая Система</h1>
+    
+    <div class="scenario">
+        <h2>Демонстрация боевых сценариев</h2>
+        <button onclick="runScenario1()">Воин vs Лучник</button>
+        <button onclick="runScenario2()">Маг vs Маг</button>
+        <button onclick="runScenario3()">Гном vs Демиург</button>
+        <button onclick="runScenario4()">Турнир (4 игрока)</button>
+        <button onclick="clearOutput()">Очистить</button>
+    </div>
+
+    <div id="output" class="output"></div>
+
+    <script src="task.js"></script>
+    <script>
+        const outputDiv = document.getElementById('output');
+
+        function log(message) {
+            const line = document.createElement('div');
+            line.textContent = message;
+            outputDiv.appendChild(line);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        function clearOutput() {
+            outputDiv.innerHTML = '';
+        }
+
+        function runScenario1() {
+            clearOutput();
+            log('═══════════════════════════════════════════════════════════');
+            log('СЦЕНАРИЙ 1: Воин vs Лучник');
+            log('═══════════════════════════════════════════════════════════\n');
+            
+            const players = [
+                new Warrior(0, 'Сергей'),
+                new Archer(8, 'Александр'),
+            ];
+
+            runBattle(players);
+        }
+
+        function runScenario2() {
+            clearOutput();
+            log('═══════════════════════════════════════════════════════════');
+            log('СЦЕНАРИЙ 2: Маг vs Маг');
+            log('═══════════════════════════════════════════════════════════\n');
+            
+            const players = [
+                new Mage(0, 'Мерлин'),
+                new Mage(10, 'Гендальф'),
+            ];
+
+            runBattle(players);
+        }
+
+        function runScenario3() {
+            clearOutput();
+            log('═══════════════════════════════════════════════════════════');
+            log('СЦЕНАРИЙ 3: Гном vs Демиург');
+            log('═══════════════════════════════════════════════════════════\n');
+            
+            const players = [
+                new Dwarf(0, 'Торин'),
+                new Demiurge(12, 'Архимаг'),
+            ];
+
+            runBattle(players);
+        }
+
+        function runScenario4() {
+            clearOutput();
+            log('═══════════════════════════════════════════════════════════');
+            log('СЦЕНАРИЙ 4: Боевой Турнир (4 игрока)');
+            log('═══════════════════════════════════════════════════════════\n');
+            
+            const players = [
+                new Warrior(0, 'Воин'),
+                new Archer(5, 'Лучник'),
+                new Mage(10, 'Маг'),
+                new Dwarf(3, 'Гном'),
+            ];
+
+            runBattle(players);
+        }
+
+        function runBattle(players) {
+            log('Начальное состояние:');
+            players.forEach(p => {
+                log(`  ${p.name} (${p.description}): HP=${p.life}, Pos=${p.position}`);
+            });
+            log('');
+
+            let round = 0;
+            while (players.filter(p => !p.isDead()).length > 1) {
+                round++;
+                log(`\nРаунд ${round}:`);
+                log('─'.repeat(60));
+
+                const playersInOrder = players
+                    .filter(p => !p.isDead())
+                    .sort((a, b) => b.speed - a.speed);
+
+                for (const player of playersInOrder) {
+                    if (!player.isDead()) {
+                        const initialPosition = player.position;
+                        const initialLife = player.life;
+                        
+                        const enemy = player.chooseEnemy(players);
+                        if (enemy) {
+                            player.moveToEnemy(enemy);
+                            player.tryAttack(enemy);
+
+                            const action = player.position !== initialPosition ? 'двигается' : 'стоит';
+                            const lifeChange = initialLife - player.life;
+                            
+                            log(`  ${player.name} ${action} на позицию ${player.position}, атакует ${enemy.name}`);
+                            if (lifeChange > 0) {
+                                log(`    📉 ${player.name} потерял ${lifeChange.toFixed(2)} HP (осталось ${player.life.toFixed(2)})`);
+                            }
+                            if (enemy.isDead()) {
+                                log(`    💀 ${enemy.name} повален!`);
+                            } else {
+                                log(`    ${enemy.name}: HP=${enemy.life.toFixed(2)}`);
+                            }
+                        }
+                    }
+                }
+            }
+
+            const winner = players.find(p => !p.isDead());
+            log('\n' + '═'.repeat(60));
+            log(`🏆 ПОБЕДИТЕЛЬ: ${winner.name} (${winner.description})`);
+            log(`   Оставшееся здоровье: ${winner.life.toFixed(2)}`);
+            log('═'.repeat(60) + '\n');
+        }
+    </script>
+</body>
+</html>
